@@ -4,18 +4,19 @@ import {
   CategoryScale,
   LinearScale,
   BarElement,
+  RadialLinearScale,
   Title,
   Tooltip,
   Legend,
   ArcElement,
 } from 'chart.js';
 
-import { Bar, Doughnut } from 'react-chartjs-2';
+import { Bar, Doughnut, PolarArea } from 'react-chartjs-2';
 import { AuthContext } from '@/app/context/AuthContext';
 import { ExpenceContext } from '@/app/context/expenceContext';
 
 
-ChartJS.register(CategoryScale, LinearScale, BarElement,ArcElement, Title, Tooltip, Legend);
+ChartJS.register(CategoryScale, LinearScale, BarElement,ArcElement, RadialLinearScale, Title, Tooltip, Legend);
 
 export const Chart1 = () => {
 const { AuthData } = useContext(AuthContext);
@@ -88,7 +89,7 @@ const data = {
 
   return (
     <div style={{ height: '300px', width: '100%' }}> 
-    <Doughnut data={data} options={options} />
+    <PolarArea data={data} options={options} />
   </div>
   );
 };
