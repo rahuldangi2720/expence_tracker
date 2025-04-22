@@ -13,7 +13,7 @@ dotenv.config({path:"./Config/config.env"})
 app.use(
     cors({
       origin:process.env.CORS_PORT||"http://localhost:3000", 
-      methods: ["GET", "POST","PUT"],
+      methods: ["GET", "POST","PUT","DELETE"],
       credentials: true,
     })
   );
